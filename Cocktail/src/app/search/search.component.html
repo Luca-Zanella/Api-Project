@@ -1,0 +1,17 @@
+<input type="text" #query>
+<button (click)="submit(query)">Submit</button>
+
+
+<div *ngIf="results">
+    <div class="row">
+        <div class="col-sm-6 col-md-4" *ngFor="let i of results.drinks ">
+            <div class="thumbnail">
+                <div class="content">
+                    <img src="{{i.strDrinkThumb}}">
+                    <h3>{{i.strDrink}}</h3>
+                    <h4><a [routerLink]="['/item',i.idDrink]">{{i.idDrink}}</a></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
